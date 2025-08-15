@@ -1,26 +1,39 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@layer utilities {
+  /* FONTS */
+  .font-brand {
+    font-family: var(--font-averia-serif);
+  }
+  .font-ui {
+    font-family: var(--font-inter);
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@theme {
+  /* SPACING & STYLING */
+  --radius-card: 16px;
+  --shadow-card: 0 10px 30px -10px rgba(0, 0, 0, 0.2);
+
+  /* LIGHT THEME COLORS */
+  --color-bg: #faf7f2;
+  --color-surface: #ffffff;
+  --color-text: #1e1b16;
+  --color-border: #e5ddd0;
+  --color-primary: #c65a38; /* terracota */
+  --color-accent: #4b6b4f; /* verde ervas */
+  --color-secondary: #cfa15a; /* especiarias douradas */
 }
+
+/* DARK THEME */
+[data-theme="dark"] {
+  --color-bg: #1a1714;
+  --color-surface: #22201d;
+  --color-text: #f5f1eb;
+  --color-border: #2e2a26;
+  --color-primary: #e57350; /* terracota + brilho */
+  --color-accent: #7ba582; /* verde ervas claro */
+  --color-secondary: #d8b679; /* especiarias douradas */
+}
+
+@custom-variant dark (&:where(.dark, .dark *));
