@@ -1,18 +1,23 @@
 import ReactMarkdown from "react-markdown";
 
-export default function AiRecipe(props: {
-  recipe: string;
-  ref?: React.RefObject<HTMLDivElement | null>;
-}) {
+export default function AiRecipe(props: { recipe: string }) {
   return (
     <section
-      ref={props.ref}
       className="font-ui text-lg pt-4 pb-8 lg:w-[600px] lg:mx-auto text-left"
+      aria-labelledby="section-title"
+      role="region"
     >
-      <h3 className="font-ui font-semibold text-2xl text-balance text-accent pb-4 pt-4">
+      <h3
+        id="section-title"
+        className="font-ui font-semibold text-2xl text-balance text-accent pb-4 pt-4"
+      >
         Receita sugerida:
       </h3>
-      <article className="break-words prose">
+      <article
+        className="break-words prose"
+        role="article"
+        aria-label="Conteúdo da receita"
+      >
         <ReactMarkdown>{props.recipe}</ReactMarkdown>
       </article>
     </section>
