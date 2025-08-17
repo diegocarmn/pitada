@@ -18,7 +18,7 @@ export default function ThemeToggle() {
   return (
     <button
       onClick={() => setMode((m) => (m === "dark" ? "light" : "dark"))}
-      className="rounded-full px-2 py-2 text-text-light cursor-pointer hover:scale-115 transition-transform duration-200 ease-in-out"
+      className="rounded-full px-2 py-2 text-text-light cursor-pointer hover:scale-115 active:scale-95 transition-transform duration-200 ease-in-out"
       title={mode === "dark" ? "Modo claro" : "Modo escuro"}
     >
       {mode === "dark" ? (

@@ -2,13 +2,13 @@
 
 import Header from "./components/Header";
 import IngredientsList from "./IngredientsList";
+import AiRecipe from "./AiRecipe";
 import { IoAdd } from "react-icons/io5";
 import React from "react";
 
 export default function Home() {
   const [ingredients, setIngredients] = React.useState<string[]>([]);
-  const minIngredients = 3;
-  let id = 0;
+  const [recipe, setRecipe] = React.useState<string | null>(null);
 
   function addIngredient(formData: FormData) {
     const ingredient = formData.get("ingredient") as string;
@@ -63,8 +63,12 @@ export default function Home() {
           <IngredientsList
             list={ingredients}
             removeIngredient={removeIngredient}
+            setRecipe={setRecipe}
           />
         ) : null}
+        {recipe && (
+          <AiRecipe recipe={recipe} />
+        )}
       </main>
     </>
   );
