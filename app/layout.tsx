@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Analytics } from "@vercel/analytics/next";
 import { Averia_Serif_Libre, Lora } from "next/font/google";
 import "./globals.css";
 
@@ -108,6 +109,7 @@ export default function RootLayout({
         data-theme="light"
       >
         {children}
+        <Analytics />
       </body>
     </html>
   );
