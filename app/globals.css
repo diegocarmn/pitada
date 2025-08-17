@@ -6,7 +6,7 @@
     font-family: var(--font-averia-serif);
   }
   .font-ui {
-    font-family: var(--font-inter);
+    font-family: var(--font-lora);
   }
 }
 
@@ -16,13 +16,14 @@
   --shadow-card: 0 10px 30px -10px rgba(0, 0, 0, 0.2);
 
   /* LIGHT THEME COLORS */
-  --color-bg: #faf7f2;
+  --color-bg: #FFF9F0;
   --color-surface: #ffffff;
-  --color-text: #1e1b16;
+  --color-text: #0E0E0E;
+  --color-text-secondary: #f5f1eb;
   --color-border: #e5ddd0;
-  --color-primary: #c65a38; /* terracota */
+  --color-primary: #AA2A27; /* terracota */
   --color-accent: #4b6b4f; /* verde ervas */
-  --color-secondary: #cfa15a; /* especiarias douradas */
+  --color-secondary: #C75B33; /* especiarias douradas */
 }
 
 /* DARK THEME */
@@ -30,6 +31,7 @@
   --color-bg: #1a1714;
   --color-surface: #22201d;
   --color-text: #f5f1eb;
+  --color-text-secondary: #0E0E0E;
   --color-border: #2e2a26;
   --color-primary: #e57350; /* terracota + brilho */
   --color-accent: #7ba582; /* verde ervas claro */

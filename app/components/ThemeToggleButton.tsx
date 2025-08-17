@@ -1,5 +1,7 @@
 "use client";
 import { useEffect, useState } from "react";
+import { IoMoon } from "react-icons/io5";
+import { IoSunny } from "react-icons/io5";
 
 export default function ThemeToggle() {
   const prefersDark =
@@ -16,14 +18,14 @@ export default function ThemeToggle() {
   return (
     <button
       onClick={() => setMode((m) => (m === "dark" ? "light" : "dark"))}
-      className="rounded-full border px-3 py-1 text-sm hover:opacity-90"
-      style={{
-        borderColor: "var(--color-border)",
-        backgroundColor: "var(--color-surface)",
-        color: "var(--color-text)",
-      }}
+      className="rounded-full px-2 py-2 text-text-secondary cursor-pointer"
+      title={mode === "dark" ? "Modo claro" : "Modo escuro"}
     >
-      {mode === "dark" ? "L" : "D"}
+      {mode === "dark" ? (
+        <IoSunny className="h-6 w-6" />
+      ) : (
+        <IoMoon className="h-6 w-6" />
+      )}
     </button>
   );
 }

@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Averia_Serif_Libre, Inter } from "next/font/google";
+import { Averia_Serif_Libre, Lora } from "next/font/google";
 import "./globals.css";
 
 const averiaSerif = Averia_Serif_Libre({
@@ -8,8 +8,8 @@ const averiaSerif = Averia_Serif_Libre({
   weight: ["300", "400", "700"]
 });
 
-const inter = Inter({
-  variable: "--font-inter",
+const lora = Lora({
+  variable: "--font-lora",
   subsets: ["latin"],
 });
 
@@ -26,7 +26,7 @@ export default function RootLayout({
   return (
     <html lang="pt-br">
       <body
-        className={`${averiaSerif.variable} ${inter.variable} antialiased bg-bg`}
+        className={`${averiaSerif.variable} ${lora.variable} antialiased bg-bg`}
         data-theme="light"
       >
         {children}
