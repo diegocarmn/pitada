@@ -16,14 +16,16 @@
   --shadow-card: 0 10px 30px -10px rgba(0, 0, 0, 0.2);
 
   /* LIGHT THEME COLORS */
-  --color-bg: #FFF9F0;
+  --color-bg: #FFFCF1;
   --color-surface: #ffffff;
   --color-text: #0E0E0E;
+  --color-text-light: #FFFCF1;
   --color-text-secondary: #f5f1eb;
   --color-border: #e5ddd0;
-  --color-primary: #AA2A27; /* terracota */
-  --color-accent: #4b6b4f; /* verde ervas */
-  --color-secondary: #C75B33; /* especiarias douradas */
+  --color-primary: #FF6A3F;
+  --color-accent: #094D3B; 
+  --color-accent-fixed: #094D3B; 
+  --color-secondary: #FFE352; 
 }
 
 /* DARK THEME */
@@ -33,9 +35,7 @@
   --color-text: #f5f1eb;
   --color-text-secondary: #0E0E0E;
   --color-border: #2e2a26;
-  --color-primary: #e57350; /* terracota + brilho */
-  --color-accent: #7ba582; /* verde ervas claro */
-  --color-secondary: #d8b679; /* especiarias douradas */
+  --color-accent: #7cd69a; 
+  --color-secondary: #FFE352; 
 }
 
-@custom-variant dark (&:where(.dark, .dark *));
