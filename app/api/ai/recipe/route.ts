@@ -48,7 +48,6 @@ export async function POST(request: NextRequest) {
         { status: 500 }
       );
     }
-    console.log("Receita gerada com sucesso:", recipe);
 
     return NextResponse.json({ recipe });
   } catch (error) {

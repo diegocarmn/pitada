@@ -9,6 +9,7 @@ import React from "react";
 export default function Home() {
   const [ingredients, setIngredients] = React.useState<string[]>([]);
   const [recipe, setRecipe] = React.useState<string | null>(null);
+  const recipeSectionRef = React.useRef<HTMLDivElement | null>(null);
 
   function addIngredient(formData: FormData) {
     const ingredient = formData.get("ingredient") as string;
@@ -26,6 +27,20 @@ export default function Home() {
       return newIngredients;
     });
   };
+
+ React.useEffect(() => {
+   if (recipeSectionRef.current !== null && recipe !== "") {
+     const element = recipeSectionRef.current;
+     const elementPosition =
+       element.getBoundingClientRect().top + window.pageYOffset;
+     const offsetPosition = elementPosition - 75; 
+
+     window.scrollTo({
+       top: offsetPosition,
+       behavior: "smooth",
+     });
+   }
+ }, [recipe]);
 
   return (
     <>
@@ -67,7 +82,7 @@ export default function Home() {
           />
         ) : null}
         {recipe && (
-          <AiRecipe recipe={recipe} />
+          <AiRecipe recipe={recipe} ref={recipeSectionRef} />
         )}
       </main>
     </>

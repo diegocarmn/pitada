@@ -8,6 +8,35 @@
   .font-ui {
     font-family: var(--font-lora);
   }
+
+  /* PROSE CUSTOMIZATION */
+  .prose {
+    color: var(--color-text);
+    max-width: none;
+  }
+  .prose h1,
+  .prose h2,
+  .prose h3,
+  .prose h4 {
+    color: var(--color-accent);
+    font-family: var(--font-lora);
+    font-size: larger;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+  .prose strong {
+    color: var(--color-accent);
+    font-weight: 600;
+  }
+  .prose p {
+    color: var(--color-text);
+  }
+  .prose ul {
+    color: var(--color-text);
+  }
+  .prose ol {
+    color: var(--color-text);
+  }
 }
 
 @theme {
@@ -16,16 +45,16 @@
   --shadow-card: 0 10px 30px -10px rgba(0, 0, 0, 0.2);
 
   /* LIGHT THEME COLORS */
-  --color-bg: #FFFCF1;
+  --color-bg: #fffcf1;
   --color-surface: #ffffff;
-  --color-text: #0E0E0E;
-  --color-text-light: #FFFCF1;
+  --color-text: #0e0e0e;
+  --color-text-light: #fffcf1;
   --color-text-secondary: #f5f1eb;
   --color-border: #e5ddd0;
-  --color-primary: #FF6A3F;
-  --color-accent: #094D3B; 
-  --color-accent-fixed: #094D3B; 
-  --color-secondary: #FFE352; 
+  --color-primary: #ff6a3f;
+  --color-accent: #094d3b;
+  --color-accent-fixed: #094d3b;
+  --color-secondary: #ffe352;
 }
 
 /* DARK THEME */
@@ -33,10 +62,9 @@
   --color-bg: #1a1714;
   --color-surface: #22201d;
   --color-text: #f5f1eb;
-  --color-text-secondary: #0E0E0E;
+  --color-text-secondary: #0e0e0e;
   --color-border: #2e2a26;
-  --color-accent: #7cd69a; 
-  --color-secondary: #FFE352; 
-  --color-primary: #FF6A3F;
+  --color-accent: #7cd69a;
+  --color-secondary: #ffe352;
+  --color-primary: #ff6a3f;
 }
-

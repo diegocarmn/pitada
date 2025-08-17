@@ -80,7 +80,7 @@ export default function IngredientsList(props: {
               onClick={recipe}
               disabled={isLoading}
             >
-              {isLoading ? "Buscando..." : "Buscar receita"}
+              {isLoading ? "Buscando receita..." : "Buscar receita"}
             </button>
           </div>
         )}
