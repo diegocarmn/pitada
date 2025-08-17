@@ -77,7 +77,7 @@ export default function IngredientsList(props: {
         </ul>
       </section>
       <section
-        className="border border-border font-ui bg-surface rounded-3xl shadow-sm py-4 lg:w-[600px] lg:mx-auto"
+        className="border border-border font-ui bg-surface rounded-3xl shadow-sm py-4 mb-8 lg:w-[600px] lg:mx-auto"
         aria-labelledby="recipe-section-title"
       >
         {props.list.length < minIngredients && (

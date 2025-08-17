@@ -33,7 +33,7 @@ export default function Home() {
       const element = recipeSectionRef.current;
       const elementPosition =
         element.getBoundingClientRect().top + window.pageYOffset;
-      const offsetPosition = elementPosition - 75;
+      const offsetPosition = elementPosition - 90;
 
       window.scrollTo({
         top: offsetPosition,

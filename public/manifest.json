@@ -1,11 +1,11 @@
 {
-  "name": "Pitada - Receitas com IA",
+  "name": "Pitada",
   "short_name": "Pitada",
   "description": "Descubra receitas incríveis com os ingredientes que você já tem em casa",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#FFFCF1",
-  "theme_color": "#FF6A3F",
+  "theme_color": "#094d3b",
   "orientation": "portrait-primary",
   "icons": [
     {
