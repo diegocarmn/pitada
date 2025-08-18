@@ -1,13 +1,7 @@
 import type { Metadata } from "next";
 import { Analytics } from "@vercel/analytics/next";
-import { Averia_Serif_Libre, Lora } from "next/font/google";
+import { Lora } from "next/font/google";
 import "./globals.css";
-
-const averiaSerif = Averia_Serif_Libre({
-  variable: "--font-averia-serif",
-  subsets: ["latin"],
-  weight: ["300", "400", "700"],
-});
 
 const lora = Lora({
   variable: "--font-lora",
@@ -105,7 +99,7 @@ export default function RootLayout({
   return (
     <html lang="pt-br">
       <body
-        className={`${averiaSerif.variable} ${lora.variable} antialiased bg-bg`}
+        className={`${lora.variable} antialiased bg-bg`}
         data-theme="light"
       >
         {children}

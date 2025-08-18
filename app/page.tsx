@@ -58,8 +58,8 @@ export default function Home() {
           </h2>
 
           <p className="font-semibold font-ui py-4 text-lg md:text-xl text-balance">
-            Digite os ingredientes que tem em casa e a Pitada cria uma receita
-            deliciosa!
+            Digite os ingredientes que tem em casa e crie uma receita
+            deliciosa em uma Pitada de mágica!
           </p>
         </section>
         <form
@@ -82,10 +82,10 @@ export default function Home() {
           <button
             type="submit"
             title="Adicionar ingrediente"
-            className="bg-primary hover:bg-[#ff7e5a] text-black rounded-r-3xl py-2.5 px-4 border-t border-b border-r border-primary font-ui font-semibold shadow-sm cursor-pointer"
+            className="bg-primary text-text rounded-r-3xl py-2 px-4 border-t border-b border-r border-primary font-ui font-semibold shadow-sm cursor-pointer"
             aria-label="Adicionar ingrediente à lista"
           >
-            <IoAdd className="h-5 w-5" aria-hidden="true" />
+            <IoAdd className="h-6 w-6" aria-hidden="true" />
           </button>
         </form>
         {ingredients.length > 0 ? (

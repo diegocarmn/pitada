@@ -2,9 +2,6 @@
 
 @layer utilities {
   /* FONTS */
-  .font-brand {
-    font-family: var(--font-averia-serif);
-  }
   .font-ui {
     font-family: var(--font-lora);
   }
@@ -67,6 +64,7 @@
   --color-primary: #ff6a3f;
   --color-accent: #094d3b;
   --color-accent-fixed: #094d3b;
+  --color-hover: #ff7e5a;
   --color-secondary: #ffe352;
 }
 
@@ -77,7 +75,9 @@
   --color-text: #f5f1eb;
   --color-text-secondary: #0e0e0e;
   --color-border: #2e2a26;
-  --color-accent: #7cd69a;
+  --color-primary: #E4283F;
+  --color-accent: #41c485;
+  --color-hover: #71e44e;
   --color-secondary: #ffe352;
-  --color-primary: #ff6a3f;
+  
 }

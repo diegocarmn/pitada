@@ -102,7 +102,7 @@ export default function IngredientsList(props: {
               <p>Busque uma receita com sua lista de ingredientes.</p>
             </section>
             <button
-              className="mt-3 md:mt-0 md:ml-4 bg-primary hover:bg-[#ff7e5a] text-black rounded-3xl py-2.5 px-6 border-t border-b border-r border-primary font-ui font-semibold shadow-sm hover:scale-104 active:scale-97 transition-transform duration-100 ease-in-out cursor-pointer whitespace-nowrap disabled:opacity-50 disabled:cursor-not-allowed"
+              className="mt-3 md:mt-0 md:ml-4 bg-primary text-text rounded-3xl py-2.5 px-6 border-t border-b border-r border-primary font-ui font-semibold shadow-sm hover:scale-104 active:scale-97 transition-transform duration-100 ease-in-out cursor-pointer whitespace-nowrap disabled:opacity-50 disabled:cursor-not-allowed"
               onClick={recipe}
               disabled={isLoading}
               aria-label="Buscar receita com os ingredientes adicionados"
