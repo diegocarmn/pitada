@@ -13,7 +13,7 @@
 - **🚀 PWA Ready**: Manifesto configurado para instalação como app nativo
 - **⚡ Performance**: Otimizada com Next.js 15 e React 19
 
-## 🛠️ Stack Tecnológica
+## 🛠️ Tecnologias
 
 ![Next.js](https://img.shields.io/badge/Next.js-15.4.6-black?style=for-the-badge&logo=next.js&logoColor=white)
 ![React](https://img.shields.io/badge/React-19.1.0-61DAFB?style=for-the-badge&logo=react&logoColor=black)
@@ -30,7 +30,7 @@
 - **React Icons**: Biblioteca de ícones 
 
 
-## 📸 Screenshots
+## 📸 Capturas de tela
 ### Mobile (PWA)
 <img alt="Capturas de tela mobile" src="public/screenshots/screenshot-mobile.jpg">
 
