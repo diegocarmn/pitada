@@ -1,5 +1,7 @@
 # <img alt="CineAI Logo" src="public/logo-full.svg" width="300">
 
+**🚀 [Live Demo](https://pitada.vercel.app)**
+
 **Pitada** é uma aplicação web inteligente que transforma ingredientes em receitas deliciosas usando o poder da inteligência artificial. Com uma interface responsiva e intuitiva, você pode descobrir novas possibilidades culinárias a partir dos ingredientes que tem em casa.
 
 
