@@ -1,9 +1,8 @@
 # <img alt="CineAI Logo" src="public/logo-full.svg" width="300">
 
-**🚀 [Live Demo](https://pitada.vercel.app)**
+**🚀 [Website](https://pitada.vercel.app)**
 
 **Pitada** é uma aplicação web inteligente que transforma ingredientes em receitas deliciosas usando o poder da inteligência artificial. Com uma interface responsiva e intuitiva, você pode descobrir novas possibilidades culinárias a partir dos ingredientes que tem em casa.
-
 
 ## 🌟 Funcionalidades
 
@@ -13,11 +12,11 @@
 - **📱 Design Responsivo**: Interface otimizada para desktop, tablet e mobile
 - **♿ Acessibilidade**: Implementação completa de ARIA e navegação por teclado
 - **🚀 PWA Ready**: Manifesto configurado para instalação como app nativo
-- **⚡ Performance**: Otimizada com Next.js 15 e React 19
+- **⚡ Performance**: Otimizada com Next.js 15.5 e React 19
 
 ## 🛠️ Tecnologias
 
-![Next.js](https://img.shields.io/badge/Next.js-15.4.6-black?style=for-the-badge&logo=next.js&logoColor=white)
+![Next.js](https://img.shields.io/badge/Next.js-15.5.12-black?style=for-the-badge&logo=next.js&logoColor=white)
 ![React](https://img.shields.io/badge/React-19.1.0-61DAFB?style=for-the-badge&logo=react&logoColor=black)
 ![TypeScript](https://img.shields.io/badge/TypeScript-5.6.3-blue?style=for-the-badge&logo=typescript&logoColor=white)
 ![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-v4-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)
@@ -25,20 +24,22 @@
 
 ### Principais Dependências
 
-- **Next.js 15.4.6**: Framework React com App Router
+- **Next.js 15.5.12**: Framework React com App Router
 - **React 19.1.0**: Biblioteca de interface
 - **Tailwind CSS v4**: Framework CSS
 - **Groq SDK**: Integração com IA para geração de receitas
-- **React Icons**: Biblioteca de ícones 
-
+- **React Icons**: Biblioteca de ícones
 
 ## 📸 Capturas de tela
+
 ### Mobile (PWA)
+
 <img alt="Capturas de tela mobile" src="public/screenshots/screenshot-mobile.jpg">
 
 _Layout mobile (PWA)_
 
 ### Desktop
+
 <img alt="Capturas de tela desktop" src="public/screenshots/screenshot-desktop.png">
 
 _Layout para telas desktop_
@@ -152,7 +153,6 @@ Gera uma receita baseada nos ingredientes fornecidos.
 - `200` - Receita gerada com sucesso
 - `400` - Ingredientes inválidos ou em falta
 - `500` - Erro interno do servidor
-
 
 ## ♿ Acessibilidade
 
