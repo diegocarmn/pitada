@@ -1,8 +1,17 @@
 # <img alt="CineAI Logo" src="public/logo-full.svg" width="300">
 
-**🚀 [Website](https://pitada.vercel.app)**
+<p>
+  <img src="https://img.shields.io/badge/Next.js-15.5.12-black" />
+  <img src="https://img.shields.io/badge/React-19.1.0-61DAFB" />
+  <img src="https://img.shields.io/badge/TypeScript-5.6.3-blue" />
+  <img src="https://img.shields.io/badge/Tailwind-v4-38B2AC" />
+  <img src="https://img.shields.io/badge/Groq-AI-FF6B35" />
+</p>
 
 **Pitada** é uma aplicação web inteligente que transforma ingredientes em receitas deliciosas usando o poder da inteligência artificial. Com uma interface responsiva e intuitiva, você pode descobrir novas possibilidades culinárias a partir dos ingredientes que tem em casa.
+
+🔗 **Live:** https://pitada.vercel.app  
+📂 **Repository:** https://github.com/diegocarmn/pitada
 
 ## 🌟 Funcionalidades
 
@@ -15,12 +24,6 @@
 - **⚡ Performance**: Otimizada com Next.js 15.5 e React 19
 
 ## 🛠️ Tecnologias
-
-![Next.js](https://img.shields.io/badge/Next.js-15.5.12-black?style=for-the-badge&logo=next.js&logoColor=white)
-![React](https://img.shields.io/badge/React-19.1.0-61DAFB?style=for-the-badge&logo=react&logoColor=black)
-![TypeScript](https://img.shields.io/badge/TypeScript-5.6.3-blue?style=for-the-badge&logo=typescript&logoColor=white)
-![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-v4-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)
-![Groq](https://img.shields.io/badge/Groq-AI-FF6B35?style=for-the-badge&logo=groq&logoColor=white)
 
 ### Principais Dependências
 
@@ -109,9 +112,14 @@ pitada/
 │   ├── components/
 │   │   ├── Header.tsx              # Cabeçalho
 │   │   └── ThemeToggleButton.tsx   # Botão de alternância de tema
-│   ├── AiRecipe.tsx                # Componente de exibição de receitas
-│   ├── IngredientsList.tsx         # Lista de ingredientes
+│   ├── features/
+│   │   ├── ingredients/
+│   │   │   └── IngredientsList.tsx # Lista de ingredientes
+│   │   └── recipe/
+│   │       └── AiRecipe.tsx        # Componente de exibição de receitas
 │   ├── globals.css                 # Estilos globais e variáveis de tema
+│   ├── hooks/
+│   │   └── useScrollToRecipe.ts    # Hook para rolagem até receita
 │   ├── layout.tsx                  # Layout raiz com metadados
 │   └── page.tsx                    # Página principal
 ├── public/
@@ -119,6 +127,7 @@ pitada/
 │   ├── logo.svg                    # Logo principal
 │   ├── logo-full.svg               # Logo completo
 │   ├── preview.png                 # Imagem de preview
+│   ├── screenshots/                # Capturas de tela do app
 │   └── manifest.json               # Manifesto PWA
 └── config files...                 # Configurações do projeto
 ```
@@ -177,10 +186,14 @@ A aplicação está configurada como PWA com:
 
 Este projeto está sob a licença MIT. Veja o arquivo [LICENSE](./LICENSE.md) para mais detalhes.
 
-## 📧 Contato
+## 👤 Autor
 
-- **Linkedin**: [@diegocarmn](https://www.linkedin.com/in/diegocarmn/)
+Diego Carmona - Software Developer
+
+- Portfolio: https://diegocarmona.me/
+- GitHub: https://github.com/diegocarmn
+- LinkedIn: https://linkedin.com/in/diegocarmn
 
 ---
 
-⭐ **Feito com carinho e uma ótima playlist!**
+<p align="center">🎧 Desenvolvido com código, curiosidade e uma boa  playlist.</p>
