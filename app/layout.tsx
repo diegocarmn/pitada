@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Analytics } from "@vercel/analytics/next";
 import { Lora } from "next/font/google";
 import "./globals.css";
+import Header from "./components/Header";
 
 const lora = Lora({
   variable: "--font-lora",
@@ -103,6 +104,7 @@ export default function RootLayout({
   return (
     <html lang="pt-br">
       <body className={`${lora.variable} antialiased bg-bg`} data-theme="light">
+        <Header />
         {children}
         <Analytics />
       </body>
