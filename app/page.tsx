@@ -1,10 +1,11 @@
 "use client";
 
 import Header from "./components/Header";
-import IngredientsList from "./IngredientsList";
-import AiRecipe from "./AiRecipe";
+import IngredientsList from "./features/ingredients/IngredientsList";
+import AiRecipe from "./features/recipe/AiRecipe";
 import { IoAdd } from "react-icons/io5";
 import React from "react";
+import useScrollToRecipe from "./hooks/useScrollToRecipe";
 
 export default function Home() {
   const [ingredients, setIngredients] = React.useState<string[]>([]);
@@ -28,19 +29,7 @@ export default function Home() {
     });
   };
 
-  React.useEffect(() => {
-    if (recipeSectionRef.current !== null && recipe !== "") {
-      const element = recipeSectionRef.current;
-      const elementPosition =
-        element.getBoundingClientRect().top + window.pageYOffset;
-      const offsetPosition = elementPosition - 90;
-
-      window.scrollTo({
-        top: offsetPosition,
-        behavior: "smooth",
-      });
-    }
-  }, [recipe]);
+  useScrollToRecipe(recipeSectionRef, recipe);
 
   return (
     <>

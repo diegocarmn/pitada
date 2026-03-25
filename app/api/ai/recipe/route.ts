@@ -21,7 +21,7 @@ export async function POST(request: NextRequest) {
     ) {
       return NextResponse.json(
         { error: "Lista de ingredientes é obrigatória" },
-        { status: 400 }
+        { status: 400 },
       );
     }
 
@@ -45,7 +45,7 @@ export async function POST(request: NextRequest) {
     if (!recipe) {
       return NextResponse.json(
         { error: "Não foi possível gerar uma receita" },
-        { status: 500 }
+        { status: 500 },
       );
     }
 
@@ -54,7 +54,7 @@ export async function POST(request: NextRequest) {
     console.error("Erro ao gerar receita com Groq:", error);
     return NextResponse.json(
       { error: "Erro interno do servidor" },
-      { status: 500 }
+      { status: 500 },
     );
   }
 }
