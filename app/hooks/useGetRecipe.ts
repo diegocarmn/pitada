@@ -1,19 +1,27 @@
 import { useMutation } from "@tanstack/react-query";
 
-export function useGetRecipe(onSuccess?: (recipe: string) => void) {
-  return useMutation({
-    mutationFn: async (ingredients: string[]) => {
+export function useGetRecipe() {
+  return useMutation<string, Error, string[]>({
+    mutationFn: async (ingredients) => {
       const res = await fetch("/api/ai/recipe", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ ingredients }),
       });
 
-      const data = await res.json();
+      let data;
 
-      if (!res.ok) throw new Error(data.error || "Erro ao buscar receita");
-      return data.recipe as string;
+      try {
+        data = await res.json();
+      } catch {
+        throw new Error("Erro ao processar resposta do servidor");
+      }
+
+      if (!res.ok) {
+        throw new Error(data?.error || "Erro ao buscar receita");
+      }
+
+      return data.recipe;
     },
-    onSuccess,
   });
 }

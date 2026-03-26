@@ -1,14 +1,17 @@
 import { useGetRecipe } from "@/app/hooks/useGetRecipe";
 import type { GetRecipeCardProps } from "@/app/types/ingredients";
 
-export default function GetRecipeCard({ ingredients, setRecipe }: GetRecipeCardProps) {
+export default function GetRecipeCard({
+  ingredients,
+  setRecipe,
+}: GetRecipeCardProps) {
   const MIN_INGREDIENTS = 3;
-  const getRecipeMutation = useGetRecipe(setRecipe);
+  const getRecipeMutation = useGetRecipe();
 
   const handleGetRecipe = () => {
     getRecipeMutation.mutate(ingredients, {
-      onError: (error) => {
-        console.error("Erro ao buscar receita:", error.message);
+      onSuccess: (recipe) => {
+        setRecipe(recipe);
       },
     });
   };
