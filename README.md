@@ -118,7 +118,7 @@ pitada/
 │   ├── features/
 │   │   ├── ingredients/
 │   │   │   ├── IngredientsList.tsx    # Lista de ingredientes
-│   │   │   └── addIngredientForm.tsx  # Formulário de adição
+│   │   │   └── addIngredientForm.tsx  # Formulário de adição de ingrediente
 │   │   └── recipe/
 │   │       └── AiRecipe.tsx           # Componente de exibição de receitas
 │   ├── hooks/
@@ -139,13 +139,21 @@ pitada/
 └── config files...                    # Configurações do projeto
 ```
 
-## 🎯 API Reference
+## 🎯 Documentação da API
 
 ### Endpoint de Receitas
 
 **POST** `/api/ai/recipe`
 
-Gera uma receita baseada nos ingredientes fornecidos.
+Gera uma receita personalizada baseada nos ingredientes fornecidos usando inteligência artificial.
+
+#### Detalhes Técnicos
+
+- **Provedor IA**: Groq
+- **Modelo**: `llama-3.3-70b-versatile`
+- **Temperatura**: 0.5 (equilibra criatividade e consistência)
+- **Max Tokens**: 1024 (limite máximo de resposta)
+- **Processamento**: Assíncrono via [TanStack Query](/app/hooks/useGetRecipe.ts)
 
 #### Request Body
 
@@ -155,6 +163,10 @@ Gera uma receita baseada nos ingredientes fornecidos.
 }
 ```
 
+**Parâmetros:**
+
+- `ingredients` (string[]): Lista de ingredientes disponíveis (mínimo 3 recomendado)
+
 #### Response
 
 ```json
@@ -163,11 +175,42 @@ Gera uma receita baseada nos ingredientes fornecidos.
 }
 ```
 
+**Campos:**
+
+- `recipe` (string): Receita formatada em Markdown com:
+  - Nome da receita (em negrito)
+  - Seção **Ingredientes**
+  - Seção **Modo de preparo**
+
 #### Códigos de Status
 
 - `200` - Receita gerada com sucesso
-- `400` - Ingredientes inválidos ou em falta
-- `500` - Erro interno do servidor
+- `400` - Ingredientes ausentes ou lista vazia
+- `500` - Erro na geração (falha na IA ou servidor)
+
+#### Exemplo de Uso
+
+```typescript
+// Cliente TypeScript/React
+const response = await fetch("/api/ai/recipe", {
+  method: "POST",
+  headers: { "Content-Type": "application/json" },
+  body: JSON.stringify({
+    ingredients: ["frango", "alho", "tomate", "cebola"],
+  }),
+});
+
+const data = await response.json();
+console.log(data.recipe); // Receita em Markdown
+```
+
+#### Fluxo de Funcionamento
+
+1. **Cliente** envia lista de ingredientes via POST
+2. **Servidor** valida ingredientes (array não-vazio)
+3. **Groq API** processa com modelo `llama-3.3-70b` gerando receita
+4. **Resposta** retorna receita em Markdown formatado
+5. **Frontend** renderiza com `react-markdown` no componente `AiRecipe`
 
 ## ♿ Acessibilidade
 
