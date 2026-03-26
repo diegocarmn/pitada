@@ -3,6 +3,7 @@ import { Analytics } from "@vercel/analytics/next";
 import { Lora } from "next/font/google";
 import "./globals.css";
 import Header from "./components/Header";
+import { ReactQueryProvider } from "./providers/ReactQueryProvider";
 
 const lora = Lora({
   variable: "--font-lora",
@@ -105,7 +106,7 @@ export default function RootLayout({
     <html lang="pt-br">
       <body className={`${lora.variable} antialiased bg-bg`} data-theme="light">
         <Header />
-        {children}
+        <ReactQueryProvider>{children}</ReactQueryProvider>
         <Analytics />
       </body>
     </html>

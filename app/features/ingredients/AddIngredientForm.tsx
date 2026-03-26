@@ -27,6 +27,7 @@ export default function AddIngredientForm({
         type="text"
         name="ingredient"
         placeholder="Ex.: tomate"
+        maxLength={80}
         className="border border-border rounded-l-3xl px-4 py-2 w-full outline-none text-text font-semibold bg-surface font-ui focus:border-primary shadow-sm"
         aria-label="Digite um ingrediente"
         aria-describedby="ingredient-help"
