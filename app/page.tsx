@@ -5,19 +5,12 @@ import AiRecipe from "./features/recipe/AiRecipe";
 import React from "react";
 import useScrollToRecipe from "./hooks/useScrollToRecipe";
 import AddIngredientForm from "./features/ingredients/AddIngredientForm";
+import GetRecipeCard from "./features/recipe/GetRecipeCard";
 
 export default function Home() {
   const [ingredients, setIngredients] = React.useState<string[]>([]);
   const [recipe, setRecipe] = React.useState<string | null>(null);
   const recipeSectionRef = React.useRef<HTMLDivElement | null>(null);
-
-  const removeIngredient = (index: number) => {
-    setIngredients((prevIngredients) => {
-      const newIngredients = [...prevIngredients];
-      newIngredients.splice(index, 1);
-      return newIngredients;
-    });
-  };
 
   useScrollToRecipe(recipeSectionRef, recipe);
 
@@ -43,11 +36,13 @@ export default function Home() {
       <AddIngredientForm setIngredients={setIngredients} />
 
       {ingredients.length > 0 ? (
-        <IngredientsList
-          list={ingredients}
-          removeIngredient={removeIngredient}
-          setRecipe={setRecipe}
-        />
+        <>
+          <IngredientsList
+            ingredients={ingredients}
+            setIngredients={setIngredients}
+          />
+          <GetRecipeCard ingredients={ingredients} setRecipe={setRecipe} />
+        </>
       ) : null}
 
       {recipe && (

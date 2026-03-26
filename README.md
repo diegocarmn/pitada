@@ -118,14 +118,17 @@ pitada/
 │   ├── features/
 │   │   ├── ingredients/
 │   │   │   ├── IngredientsList.tsx    # Lista de ingredientes
-│   │   │   └── addIngredientForm.tsx  # Formulário de adição de ingrediente
+│   │   │   └── AddIngredientForm.tsx  # Formulário de adição de ingrediente
 │   │   └── recipe/
+│   │       ├── GetRecipeCard.tsx      # Card com botão para buscar receita
 │   │       └── AiRecipe.tsx           # Componente de exibição de receitas
 │   ├── hooks/
 │   │   ├── useGetRecipe.ts            # Hook com TanStack Query para fetch de receitas
 │   │   └── useScrollToRecipe.ts       # Hook para rolagem até receita
 │   ├── providers/
 │   │   └── ReactQueryProvider.tsx     # Provider do TanStack Query
+│   ├── types/
+│   │   └── ingredients.ts             # Tipos e interfaces de ingredientes
 │   ├── globals.css                    # Estilos globais e variáveis de tema
 │   ├── layout.tsx                     # Layout raiz com metadados
 │   └── page.tsx                       # Página principal

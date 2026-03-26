@@ -1,9 +1,6 @@
 import React from "react";
 import { IoAdd } from "react-icons/io5";
-
-type AddIngredientFormProps = {
-  setIngredients: React.Dispatch<React.SetStateAction<string[]>>;
-};
+import type { AddIngredientFormProps } from "@/app/types/ingredients";
 
 export default function AddIngredientForm({
   setIngredients,

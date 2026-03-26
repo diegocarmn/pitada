@@ -1,117 +1,58 @@
 "use client";
 
 import { TiDelete } from "react-icons/ti";
-import { useGetRecipe } from "@/app/hooks/useGetRecipe";
+import type { IngredientsListProps } from "@/app/types/ingredients";
 
-export default function IngredientsList(props: {
-  list: string[];
-  setRecipe: (recipe: string | null) => void;
-  removeIngredient?: (index: number) => void;
-}) {
-  const MIN_INGREDIENTS = 3;
-  const getRecipeMutation = useGetRecipe(props.setRecipe);
-
-  const handleGetRecipe = () => {
-    getRecipeMutation.mutate(props.list, {
-      onError: (error) => {
-        console.error("Erro ao buscar receita:", error.message);
-      },
+export default function IngredientsList({
+  ingredients,
+  setIngredients,
+}: IngredientsListProps) {
+  const removeIngredient = (index: number) => {
+    setIngredients((prevIngredients) => {
+      const newIngredients = [...prevIngredients];
+      newIngredients.splice(index, 1);
+      return newIngredients;
     });
   };
 
   return (
-    <>
-      <section
-        className="my-4 lg:w-[600px] lg:mx-auto lg:text-left"
-        aria-labelledby="ingredients-title"
+    <section
+      className="my-4 lg:w-[600px] lg:mx-auto lg:text-left"
+      aria-labelledby="ingredients-title"
+    >
+      <h3
+        id="ingredients-title"
+        className="font-ui font-semibold text-2xl text-balance text-accent pb-4"
       >
-        <h3
-          id="ingredients-title"
-          className="font-ui font-semibold text-2xl text-balance text-accent pb-4"
-        >
-          Ingredientes adicionados:
-        </h3>
-        <ul
-          className="list-disc md:pl-5 break-all"
-          role="list"
-          aria-label="Lista de ingredientes adicionados"
-        >
-          {props.list.map((ingredient, index) => (
-            <li
-              key={index}
-              className="font-ui text-lg text-text mx-2 font-semibold line-clamp-2 mb-1 flex items-center"
-              role="listitem"
-            >
-              <button
-                className="cursor-pointer rounded-full px-1 items-center"
-                title={`Remover ${ingredient}`}
-                onClick={() => props.removeIngredient?.(index)}
-                aria-label={`Remover ${ingredient} da lista`}
-                type="button"
-              >
-                <TiDelete
-                  className="w-5 h-5 hover:text-primary"
-                  aria-hidden="true"
-                />
-              </button>
-              <span>{ingredient}</span>
-            </li>
-          ))}
-        </ul>
-      </section>
-
-      <section
-        className="border border-border font-ui bg-surface rounded-3xl shadow-sm py-4 mb-8 lg:w-[600px] lg:mx-auto"
-        aria-labelledby="recipe-section-title"
+        Ingredientes adicionados:
+      </h3>
+      <ul
+        className="list-disc md:pl-5 break-all"
+        role="list"
+        aria-label="Lista de ingredientes adicionados"
       >
-        {props.list.length < MIN_INGREDIENTS && (
-          <p
-            className="text-sm font-semibold text-text/70 mx-5"
-            role="status"
-            aria-live="polite"
+        {ingredients.map((ingredient, index) => (
+          <li
+            key={index}
+            className="font-ui text-lg text-text mx-2 font-semibold line-clamp-2 mb-1 flex items-center"
+            role="listitem"
           >
-            Adicione pelo menos {MIN_INGREDIENTS} ingredientes para encontrar
-            receitas.
-          </p>
-        )}
-
-        {props.list.length >= MIN_INGREDIENTS && (
-          <div className="mx-5 md:px-2 py-2 flex flex-col md:flex-row md:items-center text-center md:text-left">
-            <section>
-              <h3
-                id="recipe-section-title"
-                className="text-lg font-semibold text-text pb-2"
-              >
-                Pronto para uma receita?
-              </h3>
-              <p>Busque uma receita com sua lista de ingredientes.</p>
-            </section>
-
             <button
-              className="mt-3 md:mt-0 md:ml-4 bg-primary text-text rounded-3xl py-2.5 px-6 border-t border-b border-r border-primary font-ui font-semibold shadow-sm hover:scale-104 active:scale-97 transition-transform duration-100 ease-in-out cursor-pointer whitespace-nowrap disabled:opacity-50 disabled:cursor-not-allowed"
-              onClick={handleGetRecipe}
-              disabled={getRecipeMutation.isPending}
-              aria-label="Buscar receita com os ingredientes adicionados"
-              aria-describedby="recipe-button-status"
+              className="cursor-pointer rounded-full px-1 items-center"
+              title="Remover ingrediente"
+              onClick={() => removeIngredient(index)}
+              aria-label={`Remover ${ingredient} da lista`}
               type="button"
             >
-              {getRecipeMutation.isPending
-                ? "Buscando receita..."
-                : "Buscar receita"}
+              <TiDelete
+                className="w-5 h-5 hover:text-primary"
+                aria-hidden="true"
+              />
             </button>
-
-            <div
-              id="recipe-button-status"
-              className="sr-only"
-              aria-live="polite"
-            >
-              {getRecipeMutation.isPending
-                ? "Buscando receita, aguarde..."
-                : "Clique para buscar uma receita"}
-            </div>
-          </div>
-        )}
-      </section>
-    </>
+            <span>{ingredient}</span>
+          </li>
+        ))}
+      </ul>
+    </section>
   );
 }
