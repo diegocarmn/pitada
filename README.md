@@ -5,6 +5,7 @@
   <img src="https://img.shields.io/badge/React-19.1.0-61DAFB" />
   <img src="https://img.shields.io/badge/TypeScript-5.6.3-blue" />
   <img src="https://img.shields.io/badge/Tailwind-v4-38B2AC" />
+  <img src="https://img.shields.io/badge/TanStack_Query-5.95-FF6B92" />
   <img src="https://img.shields.io/badge/Groq-AI-FF6B35" />
 </p>
 
@@ -29,9 +30,11 @@
 
 - **Next.js 15.5.12**: Framework React com App Router
 - **React 19.1.0**: Biblioteca de interface
+- **TypeScript 5.6.3**: Tipagem estática
 - **Tailwind CSS v4**: Framework CSS
+- **TanStack Query 5.95**: Gerenciamento de estado assíncrono
 - **Groq SDK**: Integração com IA para geração de receitas
-- **React Icons**: Biblioteca de ícones
+- **React Icons 5.5**: Biblioteca de ícones
 
 ## 📸 Capturas de tela
 
@@ -108,28 +111,32 @@ pitada/
 │   ├── api/
 │   │   └── ai/
 │   │       └── recipe/
-│   │           └── route.ts        # Endpoint da API de receitas
+│   │           └── route.ts           # Endpoint da API de receitas
 │   ├── components/
-│   │   ├── Header.tsx              # Cabeçalho
-│   │   └── ThemeToggleButton.tsx   # Botão de alternância de tema
+│   │   ├── Header.tsx                 # Cabeçalho
+│   │   └── ThemeToggleButton.tsx      # Botão de alternância de tema
 │   ├── features/
 │   │   ├── ingredients/
-│   │   │   └── IngredientsList.tsx # Lista de ingredientes
+│   │   │   ├── IngredientsList.tsx    # Lista de ingredientes
+│   │   │   └── addIngredientForm.tsx  # Formulário de adição
 │   │   └── recipe/
-│   │       └── AiRecipe.tsx        # Componente de exibição de receitas
-│   ├── globals.css                 # Estilos globais e variáveis de tema
+│   │       └── AiRecipe.tsx           # Componente de exibição de receitas
 │   ├── hooks/
-│   │   └── useScrollToRecipe.ts    # Hook para rolagem até receita
-│   ├── layout.tsx                  # Layout raiz com metadados
-│   └── page.tsx                    # Página principal
+│   │   ├── useGetRecipe.ts            # Hook com TanStack Query para fetch de receitas
+│   │   └── useScrollToRecipe.ts       # Hook para rolagem até receita
+│   ├── providers/
+│   │   └── ReactQueryProvider.tsx     # Provider do TanStack Query
+│   ├── globals.css                    # Estilos globais e variáveis de tema
+│   ├── layout.tsx                     # Layout raiz com metadados
+│   └── page.tsx                       # Página principal
 ├── public/
-│   ├── icons/                      # Ícones PWA e favicons
-│   ├── logo.svg                    # Logo principal
-│   ├── logo-full.svg               # Logo completo
-│   ├── preview.png                 # Imagem de preview
-│   ├── screenshots/                # Capturas de tela do app
-│   └── manifest.json               # Manifesto PWA
-└── config files...                 # Configurações do projeto
+│   ├── icons/                         # Ícones PWA e favicons
+│   ├── logo.svg                       # Logo principal
+│   ├── logo-full.svg                  # Logo completo
+│   ├── preview.png                    # Imagem de preview
+│   ├── screenshots/                   # Capturas de tela do app
+│   └── manifest.json                  # Manifesto PWA
+└── config files...                    # Configurações do projeto
 ```
 
 ## 🎯 API Reference
@@ -152,8 +159,7 @@ Gera uma receita baseada nos ingredientes fornecidos.
 
 ```json
 {
-  "recipe": "## Receita: Bruschetta de Tomate...",
-  "success": true
+  "recipe": "## Bruschetta de Tomate\n\n**Ingredientes:**\n- Tomate\n- Queijo\n- Manjericão\n\n**Modo de preparo:**..."
 }
 ```
 
