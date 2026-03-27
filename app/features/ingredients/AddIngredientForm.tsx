@@ -1,6 +1,6 @@
 import React from "react";
 import { IoAdd } from "react-icons/io5";
-import type { AddIngredientFormProps } from "@/app/types/ingredients";
+import type { AddIngredientFormProps } from "@/app/types/types";
 
 export default function AddIngredientForm({
   setIngredients,

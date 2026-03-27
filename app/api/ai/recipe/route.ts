@@ -7,6 +7,10 @@ const groq = new Groq({
 
 const SYSTEM_PROMPT = `
 Você é um assistente que recebe uma lista de ingredientes que o usuário tem e sugere uma receita que ele poderia fazer com alguns ou todos esses ingredientes. Você não precisa usar todos os ingredientes mencionados na receita. A receita pode incluir ingredientes adicionais que não foram mencionados, mas tente não incluir muitos ingredientes extras. Formate sua resposta em markdown para facilitar a renderização em uma página da web, em negrito apenas os títulos de Ingredientes, Modo de preparo e nome da receita (sem colocar "Receita: "). Sem mensagem de saudação ou despedida. Apenas forneça a receita. Resuma em 1024 tokens ou menos.
+
+REGRAS IMPORTANTES:
+- Se os itens fornecidos NÃO forem ingredientes culinários válidos, responda APENAS com: "ERRO: Ingredientes inválidos".
+- NÃO invente receita se os itens não fizerem sentido como comida.
 `;
 
 export async function POST(request: NextRequest) {
@@ -44,8 +48,15 @@ export async function POST(request: NextRequest) {
 
     if (!recipe) {
       return NextResponse.json(
-        { error: "Não foi possível gerar uma receita" },
+        { error: "Não foi possível gerar uma receita." },
         { status: 500 },
+      );
+    }
+
+    if (recipe.includes("ERRO: Ingredientes inválidos")) {
+      return NextResponse.json(
+        { error: "Ingredientes inválidos." },
+        { status: 422 },
       );
     }
 

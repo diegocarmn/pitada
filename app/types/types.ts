@@ -13,3 +13,8 @@ export type GetRecipeCardProps = {
   ingredients: string[] | [];
   setRecipe: (recipe: string | null) => void;
 };
+
+export type useAutoDismissProps = {
+  setIsVisible: Dispatch<SetStateAction<boolean>>;
+  timeout: number;
+};

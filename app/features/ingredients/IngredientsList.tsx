@@ -1,7 +1,7 @@
 "use client";
 
 import { TiDelete } from "react-icons/ti";
-import type { IngredientsListProps } from "@/app/types/ingredients";
+import type { IngredientsListProps } from "@/app/types/types";
 
 export default function IngredientsList({
   ingredients,
