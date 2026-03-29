@@ -103,8 +103,26 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="pt-br">
-      <body className={`${lora.variable} antialiased bg-bg`} data-theme="light">
+    <html lang="pt-br" suppressHydrationWarning>
+      <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+            (function() {
+              try {
+                const savedTheme = localStorage.getItem("theme");
+                const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+
+                const theme = savedTheme || (prefersDark ? "dark" : "light");
+
+                document.documentElement.setAttribute("data-theme", theme);
+              } catch (e) {}
+            })();
+                `,
+          }}
+        />
+      </head>
+      <body className={`${lora.variable} antialiased bg-bg`}>
         <Header />
         <ReactQueryProvider>{children}</ReactQueryProvider>
         <Analytics />

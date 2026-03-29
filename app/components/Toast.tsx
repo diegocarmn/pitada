@@ -3,6 +3,7 @@ import { useState } from "react";
 import { IoClose } from "react-icons/io5";
 import { IoIosAlert } from "react-icons/io";
 import useAutoDismiss from "../hooks/useAutoDismiss";
+import { slideDown, ToastAnimation } from "../motion/animations";
 
 type ToastProps = {
   errorMessage?: string;
@@ -21,13 +22,7 @@ export default function Toast({ errorMessage }: ToastProps) {
     <AnimatePresence>
       {isVisible && (
         <motion.span
-          initial={{ opacity: 0, y: -8, scale: 0.95 }}
-          animate={{ opacity: 1, y: 0, scale: 1 }}
-          exit={{ opacity: 0, y: -8, scale: 0.95 }}
-          transition={{
-            duration: 0.25,
-            ease: [0.16, 1, 0.3, 1],
-          }}
+          {...ToastAnimation}
           className="fixed top-10 left-1/2 -translate-x-1/2 z-[1000] pt-2 pb-3 px-2 rounded-2xl bg-danger text-white drop-shadow-md drop-shadow-black/30 max-w-[95vw] lg:max-w-[60vw] w-max overflow-clip"
         >
           <div className="flex items-start gap-2">

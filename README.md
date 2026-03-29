@@ -18,7 +18,8 @@
 
 - **🤖 IA Culinária**: Gere receitas personalizadas usando inteligência artificial
 - **🥗 Lista de Ingredientes**: Interface simples para adicionar e gerenciar ingredientes
-- **🎨 Tema Dinâmico**: Alterne entre modo claro e escuro
+- **🎨 Tema Dinâmico com Persistência**: Alterne entre modo claro e escuro com salvamento no localStorage
+- **🔔 Toast de Erro**: Feedback visual para falhas na busca de receita com fechamento automático e manual
 - **📱 Design Responsivo**: Interface otimizada para desktop, tablet e mobile
 - **♿ Acessibilidade**: Implementação completa de ARIA e navegação por teclado
 - **🚀 PWA Ready**: Manifesto configurado para instalação como app nativo
@@ -26,15 +27,25 @@
 
 ## 🛠️ Tecnologias
 
-### Principais Dependências
+### Frontend e Framework
 
-- **Next.js 15.5.12**: Framework React com App Router
-- **React 19.1.0**: Biblioteca de interface
-- **TypeScript 5.6.3**: Tipagem estática
-- **Tailwind CSS v4**: Framework CSS
-- **TanStack Query 5.95**: Gerenciamento de estado assíncrono
-- **Groq SDK**: Integração com IA para geração de receitas
-- **React Icons 5.5**: Biblioteca de ícones
+- **Next.js 15.5.14**: Framework React com App Router e rotas de API
+- **React 19.1.0**: Construção da interface
+- **TypeScript 5**: Tipagem estática do projeto
+
+### Estilo e UI
+
+- **Tailwind CSS v4**: Estilização utilitária
+- **@tailwindcss/typography 0.5.16**: Estilos tipográficos para conteúdo em Markdown
+- **React Icons 5.5.0**: Ícones da interface
+- **Motion 12.38.0**: Animações e transições
+
+### Dados e Integrações
+
+- **TanStack Query 5.95.2**: Mutations e gerenciamento de estado assíncrono
+- **Groq SDK 0.30.0**: Cliente para geração de receitas com IA
+- **React Markdown 10.1.0**: Renderização da resposta da IA em Markdown
+- **Vercel Analytics 1.5.0**: Métricas de uso da aplicação
 
 ## 📸 Capturas de tela
 
@@ -114,7 +125,8 @@ pitada/
 │   │           └── route.ts           # Endpoint da API de receitas
 │   ├── components/
 │   │   ├── Header.tsx                 # Cabeçalho
-│   │   └── ThemeToggleButton.tsx      # Botão de alternância de tema
+│   │   ├── ThemeToggleButton.tsx      # Botão de alternância de tema
+│   │   └── Toast.tsx                  # Notificação de erro (toast)
 │   ├── features/
 │   │   ├── ingredients/
 │   │   │   ├── IngredientsList.tsx    # Lista de ingredientes
@@ -123,12 +135,15 @@ pitada/
 │   │       ├── GetRecipeCard.tsx      # Card com botão para buscar receita
 │   │       └── AiRecipe.tsx           # Componente de exibição de receitas
 │   ├── hooks/
+│   │   ├── useAutoDismiss.ts          # Auto fechamento de feedbacks visuais
 │   │   ├── useGetRecipe.ts            # Hook com TanStack Query para fetch de receitas
 │   │   └── useScrollToRecipe.ts       # Hook para rolagem até receita
+│   ├── motion/
+│   │   └── animations.ts              # Variantes/animações da interface
 │   ├── providers/
 │   │   └── ReactQueryProvider.tsx     # Provider do TanStack Query
 │   ├── types/
-│   │   └── ingredients.ts             # Tipos e interfaces de ingredientes
+│   │   └── types.ts                   # Tipos e interfaces compartilhadas
 │   ├── globals.css                    # Estilos globais e variáveis de tema
 │   ├── layout.tsx                     # Layout raiz com metadados
 │   └── page.tsx                       # Página principal
