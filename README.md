@@ -78,7 +78,7 @@ https://github.com/user-attachments/assets/4b4df6c5-2cc9-442e-959a-b3f1d7d680b3
 ```
 pitada/
 ├── app/
-|   |-- actions/
+|   ├── actions/
 |   |   └── generateUUID.ts            # Unique ID generator
 │   ├── api/
 │   │   └── ai/
@@ -90,7 +90,7 @@ pitada/
 │   │   └── Toast.tsx                  # Error notification (toast)
 │   ├── features/
 │   │   ├── ingredients/
-|   |   |---|-- IngredientItem.tsx     # Ingredient list item
+|   |   |   ├── IngredientItem.tsx     # Ingredient list item
 │   │   │   ├── IngredientsList.tsx    # Ingredient list
 │   │   │   └── AddIngredientForm.tsx  # Add ingredient form
 │   │   └── recipe/
@@ -110,7 +110,7 @@ pitada/
 │   │   └── types.ts                   # Shared types and interfaces
 │   ├── globals.css                    # Global styles and theme variables
 │   ├── layout.tsx                     # Root layout with metadata
-│   |-- page.tsx                       # Main page
+│   ├── page.tsx                       # Main page
 │   ├── robots.ts                      # robots.txt generation (crawl rules + sitemap)
 │   └── sitemap.ts                     # Dynamic sitemap.xml generation
 ├── public/
