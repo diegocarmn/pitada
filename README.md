@@ -1,9 +1,9 @@
 # <img alt="Pitada Logo" src="public/logo-full.svg" width="300">
 
 <p>
-  <img src="https://img.shields.io/badge/Next.js-15.5.12-black" />
+  <img src="https://img.shields.io/badge/Next.js-16.2.2-black" />
   <img src="https://img.shields.io/badge/React-19.1.0-61DAFB" />
-  <img src="https://img.shields.io/badge/TypeScript-5.6.3-blue" />
+  <img src="https://img.shields.io/badge/TypeScript-5-blue" />
   <img src="https://img.shields.io/badge/Tailwind-v4-38B2AC" />
   <img src="https://img.shields.io/badge/TanStack_Query-5.95-FF6B92" />
   <img src="https://img.shields.io/badge/Groq-AI-FF6B35" />
@@ -22,15 +22,9 @@
 - Responsive, PWA-ready & accessible
 - SEO optimized (Open Graph, structured data, sitemap)
 
-## 📸 Screenshots
+## 📸 Preview
 
-### Mobile (PWA)
-
-<img alt="Mobile screenshots" src="public/screenshots/screenshot-mobile.jpg">
-
-### Desktop
-
-<img alt="Desktop screenshots" src="public/screenshots/screenshot-desktop.png">
+https://github.com/user-attachments/assets/4b4df6c5-2cc9-442e-959a-b3f1d7d680b3
 
 ## ⚙️ Technical Details
 
