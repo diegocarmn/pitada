@@ -100,6 +100,8 @@ pitada/
 │   │   ├── useAutoDismiss.ts          # Auto-dismiss visual feedback
 │   │   ├── useGetRecipe.ts            # TanStack Query hook for recipe fetching
 │   │   └── useScrollToRecipe.ts       # Hook for scrolling to recipe
+│   ├── lib/
+│   │   └── StructuredData.tsx         # JSON-LD structured data (schema.org)
 │   ├── motion/
 │   │   └── animations.ts              # UI variants/animations
 │   ├── providers/
@@ -108,7 +110,9 @@ pitada/
 │   │   └── types.ts                   # Shared types and interfaces
 │   ├── globals.css                    # Global styles and theme variables
 │   ├── layout.tsx                     # Root layout with metadata
-│   └── page.tsx                       # Main page
+│   |-- page.tsx                       # Main page
+│   ├── robots.ts                      # robots.txt generation (crawl rules + sitemap)
+│   └── sitemap.ts                     # Dynamic sitemap.xml generation
 ├── public/
 │   ├── icons/                         # PWA icons and favicons
 │   ├── logo.svg                       # Main logo
