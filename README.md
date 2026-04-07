@@ -20,6 +20,7 @@
 - Dynamic ingredient management
 - Dark/light mode with persistence
 - Responsive, PWA-ready & accessible
+- SEO optimized (Open Graph, structured data, sitemap)
 
 ## 📸 Screenshots
 

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Analytics } from "@vercel/analytics/next";
 import { Lora } from "next/font/google";
+import StructuredData from "./lib/StructuredData";
 import "./globals.css";
 import Header from "./components/Header";
 import { ReactQueryProvider } from "./providers/ReactQueryProvider";
@@ -112,6 +113,7 @@ export default function RootLayout({
   return (
     <html lang="pt-br" suppressHydrationWarning>
       <head>
+        <StructuredData />
         <script
           dangerouslySetInnerHTML={{
             __html: `
