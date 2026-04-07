@@ -13,6 +13,9 @@ const lora = Lora({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://pitada.vercel.app"),
+  verification: {
+    google: "bZQtrX_RDWNffvAvT804JbhP2K4YoJjulpOGljpHe4s",
+  },
   title: {
     default: "Pitada | Receitas com IA",
     template: "%s | Pitada",
