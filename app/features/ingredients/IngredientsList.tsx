@@ -1,22 +1,34 @@
 "use client";
 
-import { TiDelete } from "react-icons/ti";
 import type { IngredientsListProps } from "@/app/types/types";
+import { motion, AnimatePresence } from "motion/react";
+import { slideDown } from "@/app/motion/animations";
+import IngredientItem from "./IngredientItem";
 
 export default function IngredientsList({
   ingredients,
   setIngredients,
 }: IngredientsListProps) {
-  const removeIngredient = (index: number) => {
-    setIngredients((prevIngredients) => {
-      const newIngredients = [...prevIngredients];
-      newIngredients.splice(index, 1);
-      return newIngredients;
-    });
+  // Debug: verificar IDs
+  if (ingredients.length > 0) {
+    console.log(
+      "Ingredients IDs:",
+      ingredients.map((i) => ({ id: i.id, name: i.name })),
+    );
+    const ids = ingredients.map((i) => i.id);
+    const duplicates = ids.filter((id, index) => ids.indexOf(id) !== index);
+    if (duplicates.length > 0) {
+      console.warn("⚠️ IDs duplicadas detectadas:", duplicates);
+    }
+  }
+
+  const removeIngredient = (id: string) => {
+    setIngredients((prev) => prev.filter((i) => i.id !== id));
   };
 
   return (
-    <section
+    <motion.section
+      {...slideDown}
       className="my-4 lg:w-[600px] lg:mx-auto lg:text-left"
       aria-labelledby="ingredients-title"
     >
@@ -31,28 +43,17 @@ export default function IngredientsList({
         role="list"
         aria-label="Lista de ingredientes adicionados"
       >
-        {ingredients.map((ingredient, index) => (
-          <li
-            key={index}
-            className="font-ui text-lg text-text mx-2 font-semibold line-clamp-2 mb-1 flex items-center"
-            role="listitem"
-          >
-            <button
-              className="cursor-pointer rounded-full px-1 items-center"
-              title="Remover ingrediente"
-              onClick={() => removeIngredient(index)}
-              aria-label={`Remover ${ingredient} da lista`}
-              type="button"
-            >
-              <TiDelete
-                className="w-5 h-5 hover:text-primary"
-                aria-hidden="true"
-              />
-            </button>
-            <span>{ingredient}</span>
-          </li>
-        ))}
+        <AnimatePresence mode="sync">
+          {ingredients.map((ingredient) => (
+            <IngredientItem
+              key={ingredient.id}
+              id={ingredient.id}
+              name={ingredient.name}
+              onRemove={removeIngredient}
+            />
+          ))}
+        </AnimatePresence>
       </ul>
-    </section>
+    </motion.section>
   );
 }

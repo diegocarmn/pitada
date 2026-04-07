@@ -1,16 +1,21 @@
 import type { Dispatch, SetStateAction } from "react";
 
+export type Ingredient = {
+  id: string;
+  name: string;
+};
+
 export type IngredientsListProps = {
-  ingredients: string[];
-  setIngredients: Dispatch<SetStateAction<string[]>>;
+  ingredients: Ingredient[];
+  setIngredients: Dispatch<SetStateAction<Ingredient[]>>;
 };
 
 export type AddIngredientFormProps = {
-  setIngredients: Dispatch<SetStateAction<string[]>>;
+  setIngredients: Dispatch<SetStateAction<Ingredient[]>>;
 };
 
 export type GetRecipeCardProps = {
-  ingredients: string[] | [];
+  ingredients: Ingredient[] | [];
   setRecipe: (recipe: string | null) => void;
 };
 
