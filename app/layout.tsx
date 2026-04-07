@@ -11,18 +11,18 @@ const lora = Lora({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://pitada.vercel.app"),
   title: {
-    default: "Pitada",
+    default: "Pitada | Receitas com IA",
     template: "%s | Pitada",
   },
   description:
-    "Descubra receitas incríveis com os ingredientes que você já tem em casa. Use inteligência artificial para criar receitas personalizadas e deliciosas.",
+    "Crie receitas incríveis com os ingredientes que você já tem em casa usando inteligência artificial. Rápido, fácil e personalizado.",
   keywords: [
     "receitas",
     "culinária",
     "inteligência artificial",
     "ingredientes",
-    "cozinha",
     "IA",
     "receitas personalizadas",
     "comida",
@@ -35,33 +35,36 @@ export const metadata: Metadata = {
   ],
   creator: "Diego Carmona",
   publisher: "Diego Carmona",
-  metadataBase: new URL("https://pitada.vercel.app"),
+  applicationName: "Pitada",
   alternates: {
-    canonical: "/",
+    canonical: "https://pitada.vercel.app",
+    languages: {
+      "pt-BR": "https://pitada.vercel.app",
+    },
   },
   openGraph: {
-    title: "Pitada - Receitas com IA",
+    title: "Pitada | Receitas com IA",
     description:
-      "Descubra receitas incríveis com os ingredientes que você já tem em casa.",
+      "Crie receitas incríveis com os ingredientes que você já tem em casa usando inteligência artificial. Rápido, fácil e personalizado.",
     url: "https://pitada.vercel.app",
     siteName: "Pitada",
     locale: "pt_BR",
     type: "website",
     images: [
       {
-        url: "/preview.png",
+        url: "https://pitada.vercel.app/preview.png",
         width: 1200,
         height: 630,
-        alt: "Pitada - Aplicativo de receitas com IA",
+        alt: "Pitada - Gere receitas com IA a partir dos seus ingredientes",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Pitada - Receitas com IA",
+    title: "Pitada | Receitas com IA",
     description:
-      "Descubra receitas incríveis com os ingredientes que você já tem em casa.",
-    images: ["/preview.png"],
+      "Crie receitas incríveis com os ingredientes que você já tem em casa usando inteligência artificial. Rápido, fácil e personalizado.",
+    images: ["https://pitada.vercel.app/preview.png"],
   },
   robots: {
     index: true,
@@ -74,6 +77,16 @@ export const metadata: Metadata = {
       "max-snippet": -1,
     },
   },
+  appleWebApp: {
+    capable: true,
+    title: "Pitada",
+    statusBarStyle: "default",
+  },
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
   icons: {
     icon: [
       { url: "/icons/favicon.ico", sizes: "any" },
@@ -85,12 +98,6 @@ export const metadata: Metadata = {
         url: "/icons/apple-touch-icon.png",
         sizes: "180x180",
         type: "image/png",
-      },
-    ],
-    other: [
-      {
-        rel: "icon",
-        url: "/icons/favicon.ico",
       },
     ],
   },
