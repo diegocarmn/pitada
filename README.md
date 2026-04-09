@@ -14,6 +14,12 @@
 🔗 **Live:** https://pitada.vercel.app  
 📦 **Repo:** https://github.com/diegocarmn/pitada
 
+## 📸 Preview
+
+<p align="center">
+  <video src="https://github.com/user-attachments/assets/c848e9b7-13ea-46e8-875d-6fccb2867064" width="1000" controls loop muted >
+</p>
+
 ## ✨ Features
 
 - AI-powered recipe generation (Groq / LLaMA 3.3)
@@ -21,10 +27,6 @@
 - Dark/light mode with persistence
 - Responsive, PWA-ready & accessible
 - SEO optimized (Open Graph, structured data, sitemap)
-
-## 📸 Preview
-
-https://github.com/user-attachments/assets/4b4df6c5-2cc9-442e-959a-b3f1d7d680b3
 
 ## ⚙️ Technical Details
 
